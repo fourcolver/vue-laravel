@@ -1,0 +1,13 @@
+@import "./is-list";
+
+@function list-depth($list) {
+    $level: 1;
+
+    @each $value in $list {
+        @if is-list($value) {
+            $level: max(list-depth($value) + 1, $level);
+        }
+    }
+
+    @return $level;
+}

@@ -1,0 +1,7 @@
+@function to-bool($value) {
+    @if index((false, null, "", 0), $value) {
+        @return false;
+    }
+    
+    @return true;
+}

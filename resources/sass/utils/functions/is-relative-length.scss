@@ -1,0 +1,5 @@
+@import "./is-number";
+
+@function is-relative-length($value) {
+    @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+}

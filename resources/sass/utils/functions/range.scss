@@ -1,0 +1,13 @@
+@import "../functions/is-number";
+
+@function range($number, $min, $max) {
+    @each $value in $number, $min, $max {
+        $typeOf: type-of($value);
+
+        @if not is-number($value) {
+            @error "The `range()` function params must be all type `number`, found one or more type `#{$typeOf}`";
+        }
+    }
+
+    @return $number >= $min and $number <= $max;
+}

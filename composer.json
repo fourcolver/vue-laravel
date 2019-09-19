@@ -1,0 +1,80 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.1.3",
+        "appointer/swaggervel": "dev-master",
+        "barryvdh/laravel-dompdf": "^0.8.4",
+        "beyondcode/laravel-comments": "^0.1.0",
+        "cybercog/laravel-love": "^5.2",
+        "doctrine/dbal": "^2.9",
+        "fideloper/proxy": "^4.0",
+        "hashids/hashids": "^4.0",
+        "infyomlabs/swagger-generator": "dev-master",
+        "intervention/image": "^2.4",
+        "jenssegers/agent": "^2.6",
+        "laravel/framework": "5.8.*",
+        "laravel/passport": "^7.3",
+        "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.7",
+        "league/fractal": "^0.17.0",
+        "owen-it/laravel-auditing": "^9.0",
+        "spatie/geocoder": "*",
+        "spatie/laravel-medialibrary": "^7.0.0",
+        "vinkla/hashids": "*",
+        "zizaco/entrust": "^1.9"
+    },
+    "require-dev": {
+        "beyondcode/laravel-dump-server": "^1.0",
+        "filp/whoops": "^2.0",
+        "fzaninotto/faker": "^1.4",
+        "infyomlabs/laravel-generator": "5.8.x-dev",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^2.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}

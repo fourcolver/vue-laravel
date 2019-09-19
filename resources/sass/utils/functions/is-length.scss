@@ -1,0 +1,6 @@
+@import "./is-relative-length";
+@import "./is-absolute-length";
+
+@function is-length($value) {
+    @return is-relative-length($value) or is-absolute-length($value);
+}

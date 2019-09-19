@@ -1,0 +1,3 @@
+@function is-null($value) {
+    @return type-of($value) == "null";
+}

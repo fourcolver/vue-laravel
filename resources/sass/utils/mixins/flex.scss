@@ -1,0 +1,69 @@
+$aligns: (
+    none end              :( align-content: flex-end    ,align-items: flex-end      ,justify-content: flex-start    ),
+    none none             :( align-content: stretch     ,align-items: stretch       ,justify-content: flex-start    ),
+    none start            :( align-content: flex-start  ,align-items: flex-start    ,justify-content: flex-start    ),
+    none center           :( align-content: center      ,align-items: center        ,justify-content: flex-start    ),
+    none stretch          :( align-content: stretch     ,align-items: stretch       ,justify-content: flex-start    ),
+
+    start end             :( align-content: flex-end    ,align-items: flex-end      ,justify-content: flex-start    ),
+    start none            :( align-content: stretch     ,align-items: stretch       ,justify-content: flex-start    ),
+    start start           :( align-content: flex-start  ,align-items: flex-start    ,justify-content: flex-start    ),
+    start center          :( align-content: center      ,align-items: center        ,justify-content: flex-start    ),
+    start stretch         :( align-content: stretch     ,align-items: stretch       ,justify-content: flex-start    ),
+
+    center end            :( align-content: flex-end    ,align-items: flex-end      ,justify-content: center        ),
+    center none           :( align-content: stretch     ,align-items: stretch       ,justify-content: center        ),
+    center start          :( align-content: flex-start  ,align-items: flex-start    ,justify-content: center        ),
+    center center         :( align-content: center      ,align-items: center        ,justify-content: center        ),
+    center stretch        :( align-content: stretch     ,align-items: stretch       ,justify-content: center        ),
+
+    end end               :( align-content: flex-end    ,align-items: flex-end      ,justify-content: flex-end      ),
+    end none              :( align-content: stretch     ,align-items: stretch       ,justify-content: flex-end      ),
+    end start             :( align-content: flex-start  ,align-items: flex-start    ,justify-content: flex-end      ),
+    end center            :( align-content: center      ,align-items: center        ,justify-content: flex-end      ),
+    end stretch           :( align-content: stretch     ,align-items: stretch       ,justify-content: flex-end      ),
+
+    space-around end      :( align-content: flex-end    ,align-items: flex-end      ,justify-content: space-around  ),
+    space-around none     :( align-content: stretch     ,align-items: stretch       ,justify-content: space-around  ),
+    space-around start    :( align-content: flex-start  ,align-items: flex-start    ,justify-content: space-around  ),
+    space-around center   :( align-content: center      ,align-items: center        ,justify-content: space-around  ),
+    space-around stretch  :( align-content: stretch     ,align-items: stretch       ,justify-content: space-around  ),
+
+    space-between end     :( align-content: flex-end    ,align-items: flex-end      ,justify-content: space-between ),
+    space-between none    :( align-content: stretch     ,align-items: stretch       ,justify-content: space-between ),
+    space-between start   :( align-content: flex-start  ,align-items: flex-start    ,justify-content: space-between ),
+    space-between center  :( align-content: center      ,align-items: center        ,justify-content: space-between ),
+    space-between stretch :( align-content: stretch     ,align-items: stretch       ,justify-content: space-between ),
+);
+
+@mixin flex ($params: null) {
+    @if not is-null($params) and not is-map($params) {
+        @error "The `flex()` mixin param(s) must be type `map`.";
+    }
+
+    $params:    map-extend((direction: row, align: none none), $params or ());
+
+    $size:      map-get($params, size);
+    $align:     map-get($params, align);
+    $direction: map-get($params, direction);
+
+    display: flex;
+    max-height: 100%;
+    box-sizing: border-box;
+    flex-direction: $direction;
+
+    @if map-has-key($params, size) and range($size, 0, 1) {
+        flex: 1 1 100%;
+        max-width: percentage($size);
+    }
+
+    @else {
+        flex: 1;
+    }
+
+    @if map-has-key($aligns, $align) {
+        @each $property, $value in map-get($aligns, $align) {
+            #{$property}: $value;
+        }
+    }
+}

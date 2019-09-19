@@ -1,0 +1,77 @@
+@import "../functions/is-null";
+@import "../functions/is-string";
+@import "../functions/is-bool";
+@import "../functions/is-map";
+@import "../functions/is-number";
+@import "../functions/range";
+@import "../functions/set-unit";
+@import "../functions/map-extend";
+@import "./size";
+
+@mixin placeholder($params: null) {
+    @if not is-null($params) and not is-map($params) {
+        @error "The `placeholder()` mixin param(s) must be type `map`.";
+    }
+
+    $params:       map-extend((position: center center, fade: .15, fixed: false, relative: true, dropShadow: false, radius: 0, shadowBlur: 0, shadowSpread: 0), $params or ());
+
+    $url:          map-get($params, url);
+    $fade:         map-get($params, fade);
+    $blur:         map-get($params, blur);
+    $fixed:        map-get($params, fixed);
+    $radius:       map-get($params, radius);
+    $relative:     map-get($params, relative);
+    $position:     map-get($params, position);
+    $dropShadow:   map-get($params, dropShadow);
+    $shadowBlur:   map-get($params, shadowBlur);
+    $shadowColor:  map-get($params, shadowColor);
+    $shadowSpread: map-get($params, shadowSpread);
+
+    @if 
+        is-null($url)
+
+        or not is-bool($fixed)
+        or not is-bool($relative)
+        or not is-bool($dropShadow)
+
+        // or not is-number($blur)
+        or not is-number($fade)
+        or not is-number($radius)
+        or not is-number($shadowBlur)
+        or not is-number($shadowBlur)
+
+        or not range($fade, 0, 1)
+    {
+        @error "The `placeholder()` mixin param(s) have wrong types or some required param(s) are missing.";
+    }
+
+    $filters: ();
+
+    @if $dropShadow {
+        $filters: append($filters, drop-shadow(4px 4px 2px #000))
+    }
+
+    @if $blur {
+        $filters: append($filters, blur($blur))
+    }
+
+    position: if($relative, relative, null);
+    
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: if($radius, $radius, null);
+        background-image: url(#{$url});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: $position;
+        background-attachment: if($fixed, fixed, null);
+        filter: $filters;
+        box-shadow: if($shadowBlur and $shadowSpread and $shadowColor, inset 0 0 #{set-unit($shadowBlur)} #{set-unit($shadowSpread)} $shadowColor, null);
+        opacity: #{$fade};
+        z-index: 0;
+        @include size;
+    }
+}

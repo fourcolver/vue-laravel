@@ -1,0 +1,97 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "building_id",
+        "dbType": "integer:unsigned:default,0:foreign,buildings,id",
+        "htmlType": "text",
+        "relation": "1t1,Building,building_id,id"
+    },
+    {
+        "name": "type",
+        "dbType": "integer:unsigned:default,1",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "description",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },  
+    {
+        "name": "floor",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "monthly_rent",
+        "dbType": "decimal:default,0.0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "room_no",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "basement",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "attic",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

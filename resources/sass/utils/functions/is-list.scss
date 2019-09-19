@@ -1,0 +1,3 @@
+@function is-list($value) {
+    @return type-of($value) == "list";
+}

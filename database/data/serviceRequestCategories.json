@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Disturbance",
+        "parent_id": 0,
+        "has_qualifications": true
+    },
+    {
+        "name": "Defect",
+        "parent_id": 0,
+        "has_qualifications": true
+    },
+    {
+        "name": "Order documents",
+        "parent_id": 0,
+        "has_qualifications": false
+    },
+    {
+        "name": "Order a payment slip",
+        "parent_id": 0,
+        "has_qualifications": false
+    },
+    {
+        "name": "Questions about the tenancy",
+        "parent_id": 0,
+        "has_qualifications": false
+    },
+    {
+        "name": "Other",
+        "parent_id": 0,
+        "has_qualifications": false
+    },
+    {
+        "name": "Environment",
+        "parent_id": 1,
+        "has_qualifications": true
+    },
+    {
+        "name": "House",
+        "parent_id": 1,
+        "has_qualifications": true
+    },
+    {
+        "name": "Apartment",
+        "parent_id": 1,
+        "has_qualifications": true
+    },
+    {
+        "name": "Environment",
+        "parent_id": 2,
+        "has_qualifications": true
+    },
+    {
+        "name": "House",
+        "parent_id": 2,
+        "has_qualifications": true
+    },
+    {
+        "name": "Apartment",
+        "parent_id": 2,
+        "has_qualifications": true
+    }
+]

@@ -1,0 +1,3 @@
+@function is-map($value) {
+    @return type-of($value) == "map";
+}

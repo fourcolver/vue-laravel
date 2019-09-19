@@ -1,0 +1,5 @@
+@import "./is-number";
+
+@function is-frequency($value) {
+    @return is-number($value) and index('Hz' 'kHz', unit($value)) != null;
+}

@@ -1,0 +1,5 @@
+@import "./is-time";
+
+@function is-duration($value) {
+    @return is-time($value);
+}

@@ -1,0 +1,115 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": true,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "category_id",
+        "dbType": "integer:unsigned:default,0:foreign,service_request_categories,id",
+        "htmlType": "text",
+        "relation": "1t1,ServiceRequestCategory,category_id,id"
+    },
+    {
+        "name": "tenant_id",
+        "dbType": "integer:unsigned:default,0:foreign,tenants,id",
+        "htmlType": "text",
+        "relation": "1t1,Tenant,tenant_id,id"
+    },
+    {
+        "name": "agent_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "htmlType": "text",
+        "relation": "1t1,User,agent_id,id"
+    },
+    {
+        "name": "service_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "htmlType": "text",
+        "relation": "1t1,User,service_id,id"
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "status",
+        "dbType": "string:default,1",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "priority",
+        "dbType": "string:unsigned:default,1",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "qualification",
+        "dbType": "string:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "due_date",
+        "dbType": "date",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "solved_date",
+        "dbType": "date",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "is_public",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "address_id",
+        "dbType": "integer:unsigned:default,0:foreign,addresses,id",
+        "htmlType": "text",
+        "relation": "1t1,Address,address_id,id"
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "email",
+        "dbType": "string",
+        "htmlType": "email",
+        "searchable": true
+    }, 
+    {
+        "name": "phone",
+        "dbType": "string",
+        "htmlType": "phone",
+        "searchable": true
+    },
+    {
+        "name": "language",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "logo",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "blank_pdf",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "district_enable",
+        "dbType": "integer:unsigned:default,1",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "free_apartments_enable",
+        "dbType": "integer:unsigned:default,",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "free_apartments_url",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "opening_hours",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

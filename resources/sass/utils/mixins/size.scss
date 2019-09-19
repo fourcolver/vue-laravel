@@ -1,0 +1,20 @@
+@import "../functions/is-number";
+@import "../functions/set-unit";
+
+@mixin size ($width: 100%, $height: 100%) {
+    @if not is-number($width) or not is-number($height) {
+        @error "The `size()` mixin param(s) must be type `number`.";
+    }
+
+    width: set-unit($width);
+    height: set-unit($height);
+}
+
+@mixin square($size: 100%) {
+    @if not is-number($size) {
+        @error "The `square()` mixin param(s) must be type `number`.";
+    }
+
+    width: set-unit($size);
+    height: set-unit($size);
+}

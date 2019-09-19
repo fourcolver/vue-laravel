@@ -1,0 +1,89 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "description",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "label",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "address_id",
+        "dbType": "integer:unsigned:default,210:foreign,loc_addresses,id",
+        "htmlType": "text",
+        "relation": "1t1,Address,address_id,id"
+    },
+    {
+        "name": "district_id",
+        "dbType": "integer:unsigned:default,0:foreign,districts,id",
+        "htmlType": "text",
+        "relation": "1t1,District,district_id,id"
+    },
+    {
+        "name": "floor_nr",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "basement",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "attic",
+        "dbType": "integer:unsigned:default,0",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

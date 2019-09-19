@@ -1,0 +1,115 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "user_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "htmlType": "text",
+        "relation": "1t1,Writer,writer_id,id"
+    },
+    {
+        "name": "address_id",
+        "dbType": "integer:unsigned:default,0:foreign,loc_addresses,id",
+        "htmlType": "text",
+        "relation": "1t1,Address,address_id,id"
+    },
+    {
+        "name": "building_id",
+        "dbType": "integer:unsigned:default,0:foreign,buildings,id",
+        "htmlType": "text",
+        "relation": "1t1,Building,building_id,id"
+    },   
+    {
+        "name": "unit_id",
+        "dbType": "integer:unsigned:default,0:foreign,units,id",
+        "htmlType": "text",
+        "relation": "1t1,Unit,unit_id,id"
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "select,mr,mrs,company",
+        "validations": "",
+        "searchable": false
+    }, 
+    {
+        "name": "company_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "first_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "last_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },  
+    {
+        "name": "birth_date",
+        "dbType": "date",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "mobile_phone",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },    
+    {
+        "name": "private_phone",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },    
+    {
+        "name": "work_phone",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

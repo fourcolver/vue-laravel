@@ -1,0 +1,35 @@
+@mixin divider($params: null) {
+    @if not is-null($params) and not is-map($params) {
+        @error "The `divider()` mixin param(s) must be type `map`.";
+    }
+
+    $params:    map-extend((depth: 1, direction: bottom), $params or ());
+
+    $depth:     map-get($params, depth);
+    $direction: map-get($params, direction);
+
+    position: relative;
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        @include size(100%, set-unit($depth));
+    }
+    &:before {
+        border: set-unit($depth) solid transparent;
+        border-image: linear-gradient(to left, transparent, #000 48%, transparent);
+        border-image-slice: 1;
+        @if  $direction == bottom {
+            #{$direction}: #{set-unit($depth + 1)};
+        } @else {
+            #{$direction}: -#{set-unit($depth + 1)};
+        }
+    }
+    &:after {
+        border: set-unit($depth) solid transparent;
+        border-image: linear-gradient(to left, transparent, #CC3300 48%, transparent);
+        border-image-slice: 1;
+        #{$direction}: 0;
+    }
+}

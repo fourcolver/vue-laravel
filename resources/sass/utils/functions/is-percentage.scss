@@ -1,0 +1,5 @@
+@import "./is-number";
+
+@function is-percentage($value) {
+    @return is-number($value) and unit($value) == '%';
+}

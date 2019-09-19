@@ -1,0 +1,5 @@
+@import "./is-number";
+
+@function is-absolute-length($value) {
+    @return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}

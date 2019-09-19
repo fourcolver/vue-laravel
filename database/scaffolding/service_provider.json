@@ -1,0 +1,72 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "user_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "htmlType": "text",
+        "relation": "1t1,Writer,writer_id,id"
+    },
+    {
+        "name": "address_id",
+        "dbType": "integer:unsigned:default,0:foreign,addresses,id",
+        "htmlType": "text",
+        "relation": "1t1,Address,address_id,id"
+    },
+    {
+        "name": "category",
+        "dbType": "string",
+        "htmlType": "select,electrician,heating_company,lift,sanitary,key_service,caretaker,real_estate_service",
+        "searchable": true
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "email",
+        "dbType": "string",
+        "htmlType": "email",
+        "searchable": true
+    },
+    {
+        "name": "phone",
+        "dbType": "string",
+        "htmlType": "phone",
+        "searchable": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

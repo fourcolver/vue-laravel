@@ -1,0 +1,72 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "email",
+        "dbType": "string",
+        "htmlType": "email",
+        "searchable": true
+    }, 
+    {
+        "name": "phone",
+        "dbType": "string",
+        "htmlType": "phone",
+        "searchable": true
+    },
+    {
+        "name": "avatar",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "email_verified_at",
+        "dbType": "timestamp",
+        "htmlType": "text"
+    },
+    {
+        "name": "password",
+        "dbType": "string",
+        "htmlType": "password",
+        "searchable": false,
+        "inForm": false,
+        "inIndex": false
+    },    
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

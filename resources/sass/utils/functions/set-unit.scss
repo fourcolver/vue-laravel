@@ -1,0 +1,15 @@
+@import "../functions/is-integer";
+@import "../functions/is-length";
+
+@function set-unit($number, $unit: 1px) {
+    $typeOfNumber: type-of($number);
+    $typeOfUnit: type-of($unit);
+
+    @if is-integer($number) == false {
+        @error "The `set-unit()` function `number param` must be type `number`, found type #{typeOfNumber}";
+    } @else if (is-length($unit) == false) {
+        @error "The `set-unit()` function `unit param` must be a valid unit, found type #{$typeOfUnit}";
+    }
+
+    @return if(unitless($number), $number * $unit, $number);
+}
